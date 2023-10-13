@@ -6,7 +6,10 @@ console.log(button, text);
 
 // DOMSelectors are objects that hold access to the DOM that you can call upon easily at any point in your code.
 const DOMSelectors = {
-    button:document.getElementById("btn"),
+    form: document.querySelector("#form"),
+    input: document.querySelector(".first-name"),
+    h2s: document.querySelectorAll("h2"),
+    button:document.getElementById("#btn"),
     text:document.querySelector("#text"),
     empty:document.querySelector(".nothing"),
     point:document.querySelectorAll(".point"), //gets all instances of this
@@ -15,3 +18,8 @@ const DOMSelectors = {
 //console.log(DOMSelectors.points[0]); // this returns the first ever element in the document with class 'point'
 //console.log(DOMSelectors.button) //can get specific element
 console.log(DOMSelectors);
+DOMSelectors.form.addEventListener("submit", function(event){
+    event.preventDefault();
+    console.log(DOMSelectors.input.value);
+    DOMSelectors.h2s.forEach((el) => el.textContent=DOMSelectors.input.value);
+});
