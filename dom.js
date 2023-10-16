@@ -23,3 +23,12 @@ DOMSelectors.form.addEventListener("submit", function(event){
     console.log(DOMSelectors.input.value);
     DOMSelectors.h2s.forEach((el) => el.textContent=DOMSelectors.input.value);
 });
+
+function object(first, last){
+    this.firstName = first;
+    this.lastName = last;
+    console.log(object);
+};
+let x = prompt("Insert First Name");
+let y = prompt("Insert Last Name");
+object(x,y);
