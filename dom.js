@@ -7,22 +7,26 @@ console.log(button, text);
 // DOMSelectors are objects that hold access to the DOM that you can call upon easily at any point in your code.
 const DOMSelectors = {
     form: document.querySelector("#form"),
-    input: document.querySelector(".first-name"),
+    input1: document.querySelector(".first-name"),
+    input2: document.querySelector(".old"),
     h2s: document.querySelectorAll("h2"),
+    h3s: document.querySelectorAll("h3"),
     button:document.getElementById("#btn"),
     text:document.querySelector("#text"),
     empty:document.querySelector(".nothing"),
-    point:document.querySelectorAll(".point"), //gets all instances of this
-    pointTwo:document.getElementById("pointTwo"),
+    /* point:document.querySelectorAll(".point"), //gets all instances of this
+    pointTwo:document.getElementById("pointTwo"), */
 };
 //console.log(DOMSelectors.points[0]); // this returns the first ever element in the document with class 'point'
 //console.log(DOMSelectors.button) //can get specific element
 console.log(DOMSelectors);
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
-    console.log(DOMSelectors.input.value);
-    DOMSelectors.h2s.forEach((el) => el.textContent=DOMSelectors.input.value);
+    console.log(DOMSelectors.input1.value, DOMSelectors.input2.value);
+    DOMSelectors.h2s.forEach((el) => el.textContent=DOMSelectors.input1.value);
+    DOMSelectors.h3s.forEach((el) => el.textContent=DOMSelectors.input2.value);
 });
+
 /* let x = prompt("Insert First Name");
 let y = prompt("Insert Last Name");
 
