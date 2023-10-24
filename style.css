@@ -5,8 +5,6 @@ body{
     padding: 0;
     font-family: 'Shadows Into Light', cursive;
     background-color: #DBC2E8;
-
-    
 }
 #a-box {
     background-color: rgb(209, 144, 209);
@@ -31,7 +29,7 @@ body{
 
 .card {
     border-radius:2%;
-    width: 27%;
+    width: 30%;
     height: auto;
     display: flex;
     flex-direction: column;
@@ -44,19 +42,17 @@ body{
     transition:.8s ease-in;
 }
 
-.card-title{
+.first{
     font-size: 2.5rem;
     text-transform: uppercase;
-    opacity: .5;
-    transition:.2s ease-in;
 }
 
-.card-desc{
-    font-size: 1.3rem;
-    font-weight: bold;
-    opacity: .5;
-    transition:.2s ease-in;
+.last{
+    font-size: 2.5rem;
+    text-transform: uppercase;
 }
+
+
 
 .flex-container{
     display: flex;

@@ -13,6 +13,7 @@ const DOMSelectors = {
     h2: document.querySelectorAll(".first"),
     h2last:document.querySelectorAll(".last"),
     h3: document.querySelectorAll("h3"),
+    gallery: document.querySelector(".flex-container"),
     button:document.getElementById("#btn"),
     text:document.querySelector("#text"),
     empty:document.querySelector(".nothing"),
@@ -22,25 +23,20 @@ const DOMSelectors = {
 //console.log(DOMSelectors.points[0]); // this returns the first ever element in the document with class 'point'
 //console.log(DOMSelectors.button) //can get specific element
 console.log(DOMSelectors);
-function makeProfile() {
-const profile = (`Hi, ${document.querySelectorAll(".first-name")} ${document.querySelectorAll(".last-name")} ${document.querySelectorAll(".old")}`)
-return profile;
-}
-function make(profile) {
+
 
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
     console.log(DOMSelectors.input1.value, DOMSelectors.input2.value);
-    DOMSelectors.h2.forEach((el) => el.textContent=DOMSelectors.input1.value);
-    DOMSelectors.h2last.forEach((el) => el.textContent=DOMSelectors.input2.value);
-    DOMSelectors.h3.forEach((el) => el.textContent=DOMSelectors.input3.value);
-    document.querySelector(".gallery").insertAdjacentHTML("afterbegin", `<div class="card"><div class = "card-title">${DOMSelectors.firstName.value}</div></div>`);
-    const profile = makeProfile();
+    function Card(){
+    DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `<div class="card"><div class = "first">${DOMSelectors.input1.value}</div><div class = "last">${DOMSelectors.input2.value}</div><h3>${DOMSelectors.input3.value}<h3></div>`);
+    };
+    Card();
     //clearFields()
 //remove button
 });
-};
-make();
+
+
 
 
 
