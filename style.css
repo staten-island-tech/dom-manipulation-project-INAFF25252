@@ -6,9 +6,25 @@ body{
     font-family: 'Shadows Into Light', cursive;
     background-color: #d4c4b0;
 }
-#a-box {
-    background-color: rgb(78, 74, 65);
+label{
+    margin-left:2%;
 }
+.first-name{
+width: 15%;
+height: auto;
+}
+.last-name{
+    width: 15%;
+    height: auto;
+    }
+.old{
+width: 15%;
+height: auto;
+}   
+.img{
+    width: 15%;
+    height: auto;
+    }
 .remove {
     width: 10%;
     height: 10%;
@@ -84,3 +100,14 @@ a{
     font-size: 1.5rem;
     font-weight: bold;
 }
+@media screen and (max-width: 1200px) {
+    .card{
+            width:40%;
+        }
+        
+    }
+    @media screen and (max-width: 800px) {
+        .card{
+            width:100%;
+        }
+    }
