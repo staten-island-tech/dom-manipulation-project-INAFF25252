@@ -9,7 +9,17 @@ body{
 #a-box {
     background-color: rgb(209, 144, 209);
 }
-
+.remove {
+    width: 10%;
+    height: 10%;
+    margin: 3%;
+    background-color:#654377;
+    transition: transform .2s;
+}
+.remove:hover{
+    transform: scale(1.03);
+    background-color:rgb(66, 34, 66);
+}
 .card-img{
     width: 85%;
     height: auto;

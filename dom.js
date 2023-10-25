@@ -29,13 +29,29 @@ DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
     console.log(DOMSelectors.input1.value, DOMSelectors.input2.value);
     function Card(){
-    DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `<div class="card"><div class = "first">${DOMSelectors.input1.value}</div><div class = "last">${DOMSelectors.input2.value}</div><h3>${DOMSelectors.input3.value}<h3></div>`);
+    DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `<div class="card"><button class = "remove"></button><div class = "first">${DOMSelectors.input1.value}</div><div class = "last">${DOMSelectors.input2.value}</div><h3>${DOMSelectors.input3.value}<h3></div>`);
     };
+    function remove() {
+        const button = document.querySelectorAll(".remove")
+        button.forEach(btn => {
+            btn.addEventListener('click', function(evt)
+            {
+                evt.currentTarget.parentNode.remove();
+            });
+          });
+    }
     Card();
-    //clearFields()
+    clearFields();
+    remove();
+    
 //remove button
 });
-
+function clearFields(){
+    DOMSelectors.input1.value = ""
+    DOMSelectors.input2.value = ""
+    DOMSelectors.input3.value = ""
+    }
+    
 
 
 
