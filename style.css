@@ -4,27 +4,28 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Shadows Into Light', cursive;
-    background-color: #DBC2E8;
+    background-color: #d4c4b0;
 }
 #a-box {
-    background-color: rgb(209, 144, 209);
+    background-color: rgb(78, 74, 65);
 }
 .remove {
     width: 10%;
     height: 10%;
     margin: 3%;
-    background-color:#654377;
+    background-color:#434f77;
     transition: transform .2s;
 }
 .remove:hover{
     transform: scale(1.03);
-    background-color:rgb(66, 34, 66);
+    background-color:rgb(37, 34, 66);
 }
 .card-img{
     width: 85%;
     height: auto;
     overflow: hidden;
     transition: transform .2s;
+    margin: 5%;
 }
 .card-img:hover {
     transform: scale(1.03); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
@@ -44,24 +45,26 @@ body{
     display: flex;
     flex-direction: column;
     align-items:center;
-    background-color: #C192E7;
+    background-color: #9f9374;
     justify-content: space-between;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 10px 10px 5px 1px #895BA2;
+    box-shadow: 10px 10px 5px 1px #5e5748;
     transition:.8s ease-in;
 }
 
 .first{
     font-size: 2.5rem;
-    text-transform: uppercase;
+    text-transform:capitalize;
 }
 
 .last{
     font-size: 2.5rem;
-    text-transform: uppercase;
+    text-transform:capitalize;
 }
-
+.age{
+    font-size: 2.5rem;
+}
 
 
 .flex-container{

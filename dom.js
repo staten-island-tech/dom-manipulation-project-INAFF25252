@@ -12,6 +12,7 @@ const DOMSelectors = {
     input3: document.querySelector(".old"),
     h2: document.querySelectorAll(".first"),
     h2last:document.querySelectorAll(".last"),
+    h3:document.querySelectorAll(".age"),
     img: document.querySelectorAll(".card-img"),
     gallery: document.querySelector(".flex-container"),
     button:document.getElementById("#btn"),
@@ -36,7 +37,7 @@ DOMSelectors.form.addEventListener("submit", function(event){
     <img src = "${DOMSelectors.pic.value}" alt="pic" class="card-img"></img>
     <div class = "first">${DOMSelectors.input1.value}</div>
     <div class = "last">${DOMSelectors.input2.value}</div>
-    <div class="old">${DOMSelectors.input3.value}</div>
+    <div class="age">${DOMSelectors.input3.value}</div>
     </div>`);
     };
     function remove() {
