@@ -12,11 +12,12 @@ const DOMSelectors = {
     input3: document.querySelector(".old"),
     h2: document.querySelectorAll(".first"),
     h2last:document.querySelectorAll(".last"),
-    h3: document.querySelectorAll("h3"),
+    img: document.querySelectorAll(".card-img"),
     gallery: document.querySelector(".flex-container"),
     button:document.getElementById("#btn"),
     text:document.querySelector("#text"),
     empty:document.querySelector(".nothing"),
+    pic:document.querySelector(".img"),
     /* point:document.querySelectorAll(".point"), //gets all instances of this
     pointTwo:document.getElementById("pointTwo"), */
 };
@@ -27,9 +28,16 @@ console.log(DOMSelectors);
 
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
-    console.log(DOMSelectors.input1.value, DOMSelectors.input2.value);
+    console.log(DOMSelectors.input1.value, DOMSelectors.input2.value, DOMSelectors.input3.value, DOMSelectors.pic.value);
     function Card(){
-    DOMSelectors.gallery.insertAdjacentHTML("afterbegin", `<div class="card"><button class = "remove"></button><div class = "first">${DOMSelectors.input1.value}</div><div class = "last">${DOMSelectors.input2.value}</div><h3>${DOMSelectors.input3.value}<h3></div>`);
+    DOMSelectors.gallery.insertAdjacentHTML("afterbegin", 
+    `<div class="card">
+    <button class = "remove"></button>
+    <img src = "${DOMSelectors.pic.value}" alt="pic" class="card-img"></img>
+    <div class = "first">${DOMSelectors.input1.value}</div>
+    <div class = "last">${DOMSelectors.input2.value}</div>
+    <div class="old">${DOMSelectors.input3.value}</div>
+    </div>`);
     };
     function remove() {
         const button = document.querySelectorAll(".remove")
@@ -50,6 +58,7 @@ function clearFields(){
     DOMSelectors.input1.value = ""
     DOMSelectors.input2.value = ""
     DOMSelectors.input3.value = ""
+    DOMSelectors.pic.value = ""
     }
     
 
