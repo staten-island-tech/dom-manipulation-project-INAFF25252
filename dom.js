@@ -6,6 +6,7 @@ console.log(button, text);
 
 // DOMSelectors are objects that hold access to the DOM that you can call upon easily at any point in your code.
 const DOMSelectors = {
+    card: document.querySelector(".card"),
     form: document.querySelector("#form"),
     input1: document.querySelector(".first-name"),
     input2: document.querySelector(".last-name"),
@@ -29,6 +30,16 @@ console.log(DOMSelectors);
 
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
+/* function random(){
+    const R = (int)(Math.random()*256);
+    const G = (int)(Math.random()*256);
+    const B= (int)(Math.random()*256);
+    console.log(R,G,B);
+    return(R,G,B)
+};
+function getrandom(colorObject){
+document.card.style.backgroundColor = `rgb(${colorObject.R}, ${colorObject.G},${colorObject.B})`
+} */
     console.log(DOMSelectors.input1.value, DOMSelectors.input2.value, DOMSelectors.input3.value, DOMSelectors.pic.value);
     function Card(){
     DOMSelectors.gallery.insertAdjacentHTML("afterbegin", 
@@ -39,6 +50,7 @@ DOMSelectors.form.addEventListener("submit", function(event){
     <div class = "last">${DOMSelectors.input2.value}</div>
     <div class="age">${DOMSelectors.input3.value}</div>
     </div>`);
+    // getrandom();
     };
     function remove() {
         const button = document.querySelectorAll(".remove")
