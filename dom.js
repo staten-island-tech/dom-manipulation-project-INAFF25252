@@ -30,16 +30,19 @@ console.log(DOMSelectors);
 
 DOMSelectors.form.addEventListener("submit", function(event){
     event.preventDefault();
-/* function random(){
-    const R = (int)(Math.random()*256);
-    const G = (int)(Math.random()*256);
-    const B= (int)(Math.random()*256);
+function random(){
+    const R = Math.random()*256;
+    const G = Math.random()*256;
+    const B=  Math.random()*256;
     console.log(R,G,B);
     return(R,G,B)
 };
-function getrandom(colorObject){
-document.card.style.backgroundColor = `rgb(${colorObject.R}, ${colorObject.G},${colorObject.B})`
-} */
+//make a function that sets the background color of your fart to the returned r, g, and b.
+//select all created cards 
+function getrandom(colorObject, card,){
+const get = `rgb(${colorObject.R}, ${colorObject.G},${colorObject.B})`
+card.style.backgroundColor = get
+} 
     console.log(DOMSelectors.input1.value, DOMSelectors.input2.value, DOMSelectors.input3.value, DOMSelectors.pic.value);
     function Card(){
     DOMSelectors.gallery.insertAdjacentHTML("afterbegin", 
@@ -50,7 +53,9 @@ document.card.style.backgroundColor = `rgb(${colorObject.R}, ${colorObject.G},${
     <div class = "last">${DOMSelectors.input2.value}</div>
     <div class="age">${DOMSelectors.input3.value}</div>
     </div>`);
-    // getrandom();
+    const getCard = document.querySelectorAll(".card")
+    const randomColor = getCard[getCard.length-1]
+    getrandom(random(),randomColor);
     };
     function remove() {
         const button = document.querySelectorAll(".remove")
