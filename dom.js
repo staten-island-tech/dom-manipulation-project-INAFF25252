@@ -35,36 +35,36 @@ function random(){
     const G = Math.random()*256;
     const B=  Math.random()*256;
     console.log(R,G,B);
-    return(R,G,B)
+    return { R, G, B }
 };
+function bgColor(colorObject, card){
+    const get = `rgb(${colorObject.R}, ${colorObject.G},${colorObject.B}, .4)`
+    card.style.backgroundColor = get
+}
 //make a function that sets the background color of your fart to the returned r, g, and b.
 //select all created cards 
-function getrandom(colorObject, card,){
-const get = `rgb(${colorObject.R}, ${colorObject.G},${colorObject.B})`
-card.style.backgroundColor = get
-} 
     console.log(DOMSelectors.input1.value, DOMSelectors.input2.value, DOMSelectors.input3.value, DOMSelectors.pic.value);
     function Card(){
-    DOMSelectors.gallery.insertAdjacentHTML("afterbegin", 
-    `<div class="card">
-    <button class = "remove"></button>
-    <img src = "${DOMSelectors.pic.value}" alt="pic" class="card-img"></img>
-    <div class = "first">${DOMSelectors.input1.value}</div>
-    <div class = "last">${DOMSelectors.input2.value}</div>
-    <div class="age">${DOMSelectors.input3.value}</div>
-    </div>`);
-    const getCard = document.querySelectorAll(".card")
-    const randomColor = getCard[getCard.length-1]
-    getrandom(random(),randomColor);
-    };
-    function remove() {
-        const button = document.querySelectorAll(".remove")
-        button.forEach(btn => {
-            btn.addEventListener('click', function(evt)
-            {
-                evt.currentTarget.parentNode.remove();
+        DOMSelectors.gallery.insertAdjacentHTML("beforeend", 
+        `<div class="card">
+        <button class = "remove"></button>
+        <img src = "${DOMSelectors.pic.value}" alt="pic" class="card-img"></img>
+        <div class = "first">${DOMSelectors.input1.value}</div>
+        <div class = "last">${DOMSelectors.input2.value}</div>
+        <div class="age">${DOMSelectors.input3.value}</div>
+        </div>`);
+        const getCard = document.querySelectorAll(".card")
+        const randomColor = getCard[getCard.length-1]
+        bgColor(random(),randomColor)
+        };
+        function remove() {
+            const button = document.querySelectorAll(".remove")
+            button.forEach(btn => {
+                btn.addEventListener('click', function(evt)
+                {
+                    evt.currentTarget.parentNode.remove();
+                });
             });
-          });
     }
     Card();
     clearFields();
